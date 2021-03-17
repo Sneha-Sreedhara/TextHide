@@ -45,14 +45,14 @@ from multiprocessing import Process, Queue
 from tqdm import tqdm
 from torch.nn import MSELoss, CosineSimilarity
 
-from transformers import superglue_compute_metrics as compute_metrics
-from transformers import superglue_convert_examples_to_features as convert_examples_to_features
-from transformers import superglue_output_modes as output_modes
-from transformers import superglue_processors as processors
-from transformers import superglue_tasks_metrics as task_metrics
-from transformers import superglue_tasks_num_spans as task_spans
+from transformers_hide import superglue_compute_metrics as compute_metrics
+from transformers_hide import superglue_convert_examples_to_features as convert_examples_to_features
+from transformers_hide import superglue_output_modes as output_modes
+from transformers_hide import superglue_processors as processors
+from transformers_hide import superglue_tasks_metrics as task_metrics
+from transformers_hide import superglue_tasks_num_spans as task_spans
 
-from transformers import (  # AlbertForSequenceClassification,; AlbertTokenizer,; DistilBertForSequenceClassification,; DistilBertTokenizer,; FlaubertForSequenceClassification,; FlaubertTokenizer,; XLMForSequenceClassification,; XLMRobertaForSequenceClassification,; XLMRobertaTokenizer,; XLMTokenizer,; XLNetForSequenceClassification,; XLNetTokenizer,
+from transformers_hide import (  # AlbertForSequenceClassification,; AlbertTokenizer,; DistilBertForSequenceClassification,; DistilBertTokenizer,; FlaubertForSequenceClassification,; FlaubertTokenizer,; XLMForSequenceClassification,; XLMRobertaForSequenceClassification,; XLMRobertaTokenizer,; XLMTokenizer,; XLNetForSequenceClassification,; XLNetTokenizer,
     WEIGHTS_NAME,
     AdamW,
     AlbertConfig,
