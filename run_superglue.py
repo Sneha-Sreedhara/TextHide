@@ -37,13 +37,13 @@ from queue import PriorityQueue
 from heapq import heappush, heappop
 
 import numpy as np
-import torch
-from torch.utils.data import DataLoader, RandomSampler, SequentialSampler, TensorDataset
-from torch.utils.data.distributed import DistributedSampler
-from torch._utils import ExceptionWrapper
+#import torch
+#from torch.utils.data import DataLoader, RandomSampler, SequentialSampler, TensorDataset
+#from torch.utils.data.distributed import DistributedSampler
+#from torch._utils import ExceptionWrapper
 from multiprocessing import Process, Queue
 from tqdm import tqdm
-from torch.nn import MSELoss, CosineSimilarity
+#from torch.nn import MSELoss, CosineSimilarity
 
 from transformers_hide import superglue_compute_metrics as compute_metrics
 from transformers_hide import superglue_convert_examples_to_features as convert_examples_to_features
@@ -55,20 +55,20 @@ from transformers_hide import superglue_tasks_num_spans as task_spans
 from transformers_hide import (  # AlbertForSequenceClassification,; AlbertTokenizer,; DistilBertForSequenceClassification,; DistilBertTokenizer,; FlaubertForSequenceClassification,; FlaubertTokenizer,; XLMForSequenceClassification,; XLMRobertaForSequenceClassification,; XLMRobertaTokenizer,; XLMTokenizer,; XLNetForSequenceClassification,; XLNetTokenizer,
     WEIGHTS_NAME,
     AdamW,
-    AlbertConfig,
+    #AlbertConfig,
     BertConfig,
     BertForSequenceClassification,
-    BertForSpanClassification,
+    #BertForSpanClassification,
     BertTokenizer,
-    DistilBertConfig,
-    FlaubertConfig,
-    RobertaConfig,
-    RobertaForSequenceClassification,
-    RobertaForSpanClassification,
-    RobertaTokenizer,
-    XLMConfig,
-    XLMRobertaConfig,
-    XLNetConfig,
+    #DistilBertConfig,
+    #FlaubertConfig,
+    #RobertaConfig,
+    #RobertaForSequenceClassification,
+    #RobertaForSpanClassification,
+    #RobertaTokenizer,
+    #XLMConfig,
+    #XLMRobertaConfig,
+    #XLNetConfig,
     get_linear_schedule_with_warmup,
 )
 
@@ -80,13 +80,13 @@ ALL_MODELS = sum(
         tuple(conf.pretrained_config_archive_map.keys())
         for conf in (
             BertConfig,
-            XLNetConfig,
-            XLMConfig,
-            RobertaConfig,
-            DistilBertConfig,
-            AlbertConfig,
-            XLMRobertaConfig,
-            FlaubertConfig,
+            #XLNetConfig,
+            #XLMConfig,
+            #RobertaConfig,
+            #DistilBertConfig,
+            #AlbertConfig,
+            #XLMRobertaConfig,
+            #FlaubertConfig,
         )
     ),
     (),
@@ -106,11 +106,11 @@ MODEL_CLASSES = {
         BertTokenizer,
         {"classification": BertForSequenceClassification, "span_classification": BertForSpanClassification},
     ),
-    "roberta": (
-        RobertaConfig,
-        RobertaTokenizer,
-        {"classification": RobertaForSequenceClassification, "span_classification": RobertaForSpanClassification},
-    ),
+    #"roberta": (
+    #    RobertaConfig,
+    #    RobertaTokenizer,
+    #    {"classification": RobertaForSequenceClassification, "span_classification": RobertaForSpanClassification},
+    #),
 }
 
 TASK2FILENAME = {
